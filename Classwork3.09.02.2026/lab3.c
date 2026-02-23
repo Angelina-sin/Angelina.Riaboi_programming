@@ -69,7 +69,7 @@ void task3_a(){
     
     printf("Task 3a\n");
     printf("Enter three numbers:");
-    scanf("%d,%d,%d",&a,&b,&c);
+    scanf("%d %d %d",&a,&b,&c);
     
     int product=a*b*c;
     
@@ -82,7 +82,7 @@ void task3_b(){
     
     printf("Task 3b\n");
     printf("Enter a,b,c:");
-    scanf("%lld,%lld,%lld",&a,&b,&c);
+    scanf("%lld %lld %lld",&a,&b,&c);
     
     long long product=a*b*c;
     
@@ -134,10 +134,11 @@ int max_abs(int x, int y){
 
 void task6(){
     int a, b, c;
+    printf("Enter three integers: ");
     scanf("%d %d %d", &a, &b, &c);
     int max_num = max_abs(a, b);
     max_num = max_abs(max_num, c);
-    printf("%d", max_num);
+    printf("%d\n", max_num);
 }
 
 // Task 7
@@ -147,11 +148,11 @@ void task7() {
     printf("Enter a,b,c:");
     scanf("%lf %lf %lf",&a,&b,&c);
 
-    if (a==0) {
+    if (fabs(a) < 1e-9) {
         printf("Not a quadratic equation");
 
-        if (b==0) {
-            if (c==0) {
+        if (fabs(b) < 1e-9){
+            if (fabs(c) < 1e-9) {
                 printf("Infinite solutions");
             }
             else {
@@ -176,7 +177,7 @@ void task7() {
         printf("Two roots\n");
         printf("x1=%lf,x2=%lf",x1,x2);
     }
-    else if (D==0) {
+    else if (fabs(D) < 1e-9){
         double x=-b/(2*a);
 
         printf("One root\n");
@@ -197,4 +198,5 @@ int main() {
     task7();
 
     return 0;
+
 }
