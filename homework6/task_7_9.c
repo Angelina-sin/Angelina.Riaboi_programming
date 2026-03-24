@@ -7,21 +7,19 @@ int main(){
     printf("Enter n: ");
     scanf("%d", &n);
 
-    double a, min;
+    double mas[100];
 
-    printf("Enter a1: ");
-    scanf("%lf", &a);
-    min=a;
+    for(int i=0; i<n; i++){
+        printf("Enter a%d: ", i+1);
+        scanf("%lf", &mas[i]);
+    }
+    double min = mas[0];
 
-    for(int i=2; i<=n; i++){
-        printf("Enter a%d: ", i);
-        scanf("%lf", &a);
-
-        if(a<min){
-            min=a;
+    for(int i = 1; i < n; i++){
+        if(mas[i] < min){
+            min = mas[i];
         }
     }
-
     printf("Minimum = %.2lf\n", min);
 
     return 0;
