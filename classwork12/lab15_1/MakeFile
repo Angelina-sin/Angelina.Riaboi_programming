@@ -1,0 +1,6 @@
+all:
+	g++ Rat.cpp TestRat.cpp -o rational.exe
+run:
+	.\rational.exe
+clean:
+	del rational.exe
